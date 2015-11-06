@@ -138,10 +138,8 @@ CGEventRef callback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, v
     UniCharCount len;
     UniCharCount i;
     (void)(proxy);
+    (void)(type);
     (void)(unused);
-
-    if ((type != kCGEventKeyDown) && (type != kCGEventFlagsChanged))
-        return event;
 
     CGEventKeyboardGetUnicodeString(event, MAX_UNICHAR_SIZE, &len, chars);
 
